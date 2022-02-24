@@ -96,7 +96,7 @@ namespace cSharp_imgViewer
             foreach (System.IO.FileInfo file in dir.GetFiles())
             {
                 if (file.Name.Contains(".jpg") || file.Name.Contains(".png") || file.Name.Contains(".jfif") || file.Name.Contains(".jpeg")
-                    || file.Name.Contains("jpe"))
+                    || file.Name.Contains(".jpe"))
                 {
                     arr[idx] = file.Name;
                     arr[idx + 1] = file.Length.ToString();
