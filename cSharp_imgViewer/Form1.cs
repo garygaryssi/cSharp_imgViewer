@@ -56,10 +56,10 @@ namespace cSharp_imgViewer
                     dirPath = filePath.Replace(fileName, "");
 
                     result.Text = dirPath;
+
+                    makeList();
                 }
             }
-
-            makeList();
 
         }
 
