@@ -42,6 +42,10 @@ namespace cSharp_imgViewer
 
                     filePath = openFileDialog.FileName;
 
+                    Image img = Image.FromFile(filePath);
+
+                    pictureBox1.Image = img;
+
                     var fileStream = openFileDialog.OpenFile();
 
                     using (StreamReader reader = new StreamReader(fileStream))
@@ -76,7 +80,16 @@ namespace cSharp_imgViewer
             listView1.Columns.Add("크기", 60);
             listView1.Columns.Add("날짜", 500);
 
-            folderName = result.Text.Substring(0, result.Text.Length - 1);
+            folderName = string.Empty;
+
+            if (result.Text.Length > 0)
+            {
+                folderName = result.Text.Substring(0, result.Text.Length - 1);
+            }
+            else
+            {
+                MessageBox.Show("지정된 경로가 없습니다.");
+            }
 
             System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(folderName);
 
